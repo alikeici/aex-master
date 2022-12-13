@@ -5,78 +5,77 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Button, Paragraph, Menu, Divider, Provider } from 'react-native-paper';
 
 
-export default function HomeScreen (){
+export default function HomeScreen() {
 
 
 
   const nav = useNavigation()
 
-    return (
-      <View>
+  return (
+    <View>
 
       <TouchableOpacity style={styles.loginlink}>
-      <Text  onPress={() => nav.navigate('loginscreen')}>Logga in</Text>
-      <Text>Registrering</Text>
-      <Text>Boka tid</Text>
-      <Text>Mina sidor</Text>
+        <Text onPress={() => nav.navigate('loginscreen')}>Logga in</Text>
+        <Text>Registrering</Text>
+        <Text>Boka tid</Text>
+        <Text>Mina sidor</Text>
 
       </TouchableOpacity>
-      <ImageBackground 
-      source={require('/Users/Momo/aex/aex/screens/home/cleaning.jpg')}
-      style={styles.imagebackground}
+      <ImageBackground
+        source={require('../home/cleaning.jpg')}
+        style={styles.imagebackground}
       >
 
-      <View style={styles.container}>
+        <View style={styles.container}>
 
-        <Text style={styles.homeHeader}>Städa fint Ab</Text>
-        <Text style={styles.homebody}>Välkommen till oss.</Text>
-        <Text style={styles.homebody1}>Här kan du som kund boka och avboka städningar, lämna feedback p genomförda städningar samt få en överblick över dina sidor</Text>
+          <Text style={styles.homeHeader}>Städa fint Ab</Text>
+          <Text style={styles.homebody}>Välkommen till oss.</Text>
+          <Text style={styles.homebody1}>Här kan du som kund boka och avboka städningar, lämna feedback p genomförda städningar samt få en överblick över dina sidor</Text>
 
 
-      </View>
+        </View>
       </ImageBackground>
-      </View>
-    );
-  }
+    </View>
+  );
+}
 
 
 const styles = StyleSheet.create({
-    container: {
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginTop: 50,
-    },
-    homeHeader: {
-        fontSize: 40,
-        fontWeight: 'bold',
-        color: '#00008b'
-    },
-    homebody: {
-        marginTop: 20,
-        marginLeft: 20,
-        marginRight: 20,
-        fontSize: 20,
-    },
-    homebody1: {
-      marginBottom: 20,
-      marginLeft: 20,
-      marginRight: 20,
-      fontSize: 20,
+  container: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 50,
   },
-  loginlink:{
+  homeHeader: {
+    fontSize: 40,
+    fontWeight: 'bold',
+    color: '#00008b'
+  },
+  homebody: {
+    marginTop: 20,
+    marginLeft: 20,
+    marginRight: 20,
+    fontSize: 20,
+  },
+  homebody1: {
+    marginBottom: 20,
+    marginLeft: 20,
+    marginRight: 20,
+    fontSize: 20,
+  },
+  loginlink: {
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-around',
     borderBottomWidth: 1,
-    borderColor : '#00008b',
+    borderColor: '#00008b',
     borderRadius: 5,
     paddingTop: 25,
     paddingBottom: 10,
     width: '100%',
   },
-    imagebackground:{
-      width: Dimensions.get('window').width,
-      height: Dimensions.get('window').height
+  imagebackground: {
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height
   },
-  });
-  
+});

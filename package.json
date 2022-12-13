@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
+    "dev": "node index.js",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
@@ -15,16 +16,34 @@
     "@react-navigation/native": "^6.0.16",
     "@react-navigation/native-stack": "^6.9.4",
     "@react-navigation/stack": "^6.3.8",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "expo": "~47.0.8",
     "expo-status-bar": "~1.4.2",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
     "react": "18.1.0",
     "react-native": "0.70.5",
     "react-native-gesture-handler": "~2.8.0",
     "react-native-paper": "^3.3.0",
-    "react-native-reanimated": "~2.12.0"
+    "react-native-reanimated": "~2.12.0",
+    "react-native-safe-area-context": "^4.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
   },
-  "private": true
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alikeici/aex-master.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/alikeici/aex-master/issues"
+  },
+  "homepage": "https://github.com/alikeici/aex-master#readme",
+  "description": ""
 }
