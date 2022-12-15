@@ -1,16 +1,25 @@
+import express from "express";
 import { PrismaClient } from "@prisma/client"
 const prisma = new PrismaClient();
 
+const route = express.Router();
 
-const registerRoute = ("/register", async (req, res)=> {
-    const user = await prisma.users.create({
+// get all registered users from db
+route.get("/", (async (req, res) => {
+    var users = await prisma.users.findMany()
+    res.json(users)
+}))
+
+route.post("/", (async (req, res) => {
+    const addUser = await prisma.users.create({
         data: {
-            namn: req.body.name,
+            name: req.body.name,
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password,
         }
-    }) 
-    res.json(user)
-})
+    })
 
-export default registerRoute
+    res.json(addUser)
+}))
+
+export default route

@@ -30,3 +30,4 @@ const corsConfig = {
 server.use(cors(corsConfig))
 
 server.listen(PORT, () => console.log(`Server started on ${PORT}`))
+server.listen(PORT, () => console.log(`Server started on ${PORT}`))
