@@ -1,10 +1,11 @@
 import React, { Component, useState } from 'react';
 import { StyleSheet, View, TextInput, Button, Text, Alert } from 'react-native';
 
-export default class Register extends Component {
+
+export default function Register ( ) {
 
 
-        render() {
+      
             return (
         <View style={styles.MainContainer}>
                 <Text style= {styles.title}>User Registration Form</Text>
@@ -36,7 +37,8 @@ export default class Register extends Component {
             );
 
     }
-}
+
+
 const styles = StyleSheet.create({
 
     MainContainer :{
@@ -61,4 +63,3 @@ const styles = StyleSheet.create({
 }
     );
 
-    export default Register;
