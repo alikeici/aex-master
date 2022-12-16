@@ -1,54 +1,34 @@
 import React, { Component, useState } from 'react';
 import { StyleSheet, View, TextInput, Button, Text, Alert } from 'react-native';
 
-export default function Register () {
-
-  const [user, setUser] = useState([])
-  const [name , setName] = useState("");
-  const [email , setEmail] = useState("");
-  const [password , setPassword] = useState("");
-
-  
-  const handleSave = ( ) => {
-    fetch("http://localhost:5000/register", {
-      method: "POST",
-      body: JSON.stringify({
-        name : name,
-        email: email,
-        password: password
-      }),
-      headers:{
-        "Content-Type": "application/json"
-      }
-    })
-  }
+export default class Register extends Component {
 
 
-     
+        render() {
             return (
         <View style={styles.MainContainer}>
                 <Text style= {styles.title}>User Registration Form</Text>
           
                 <TextInput
                   placeholder='Enter User Name'
-                  onChangeText={(TextInputText) => setName(TextInputText)}
+                 // onChangeText={(TextInputText) => this.setState({name : TextInputText})}
                   underlineColorAndroid='transparent'
                   style={styles.TextInputStyleClass}
                   />
                 <TextInput
                   placeholder='Enter User Email'
-                  onChangeText={() => setEmail()}
+                //  onChangeText={(TextInputText) => this.setState({email : TextInputText})}
                   underlineColorAndroid='transparent'
                   style={styles.TextInputStyleClass}
                   />
                 <TextInput
                   placeholder='Enter User Password'
-                  onChangeText={() => setPassword()}
+                //  onChangeText={(TextInputText) => this.setState({password : TextInputText})}
                   underlineColorAndroid='transparent'
                   style={styles.TextInputStyleClass}
                   secureTextEntry={true}
                   />
-                <Button title='Click Here To Register' onPress={handleSave} color='#2196F3' />
+                <Button title='Click Here To Register' onPress={this.UserRegistrationFunction} color='#2196F3' />
               
           
         </View>
@@ -56,8 +36,7 @@ export default function Register () {
             );
 
     }
-
-
+}
 const styles = StyleSheet.create({
 
     MainContainer :{
@@ -81,3 +60,5 @@ const styles = StyleSheet.create({
     }
 }
     );
+
+    export default Register;
