@@ -12,19 +12,19 @@ export default function Register ( ) {
           
                 <TextInput
                   placeholder='Enter User Name'
-                 // onChangeText={(TextInputText) => this.setState({name : TextInputText})}
+                 onChangeText={(TextInputText) => this.setState({name : TextInputText})}
                   underlineColorAndroid='transparent'
                   style={styles.TextInputStyleClass}
                   />
                 <TextInput
                   placeholder='Enter User Email'
-                //  onChangeText={(TextInputText) => this.setState({email : TextInputText})}
+                onChangeText={(TextInputText) => this.setState({email : TextInputText})}
                   underlineColorAndroid='transparent'
                   style={styles.TextInputStyleClass}
                   />
                 <TextInput
                   placeholder='Enter User Password'
-                //  onChangeText={(TextInputText) => this.setState({password : TextInputText})}
+                onChangeText={(TextInputText) => this.setState({password : TextInputText})}
                   underlineColorAndroid='transparent'
                   style={styles.TextInputStyleClass}
                   secureTextEntry={true}
