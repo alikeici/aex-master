@@ -22,4 +22,20 @@ route.post("/", (async (req, res) => {
     res.json(addUser)
 }))
 
+route.delete("/clear", (async (req, res) => {
+    await prisma.users.deleteMany()
+}))
+
+route.patch(":/id", (async (req, res) => {
+    await prisma.users.update({
+        where: {
+            id: parseInt(req.params.id)
+        },
+        data: {
+            name: req.body.name,
+            email: req.body.email
+        }
+    })
+}))
+
 export default route
