@@ -6,11 +6,12 @@ import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './screens/home/HomeScreen';
 import LoginScreen from './screens/login/LoginScreen';
+import Register from './screens/register/Register';
 
 export default function App() {
 
   const Stack = createStackNavigator();
-  //const Drawer = createDrawerNavigator();
+  
 
   return (
 
@@ -21,6 +22,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen options={{headerShown : false}} name='homescreen' component={HomeScreen}></Stack.Screen>
         <Stack.Screen name='loginscreen' component={LoginScreen}></Stack.Screen>
+        <Stack.Screen name='register' component={Register}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
 
