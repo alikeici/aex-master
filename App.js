@@ -11,7 +11,7 @@ import Register from './screens/register/Register';
 export default function App() {
 
   const Stack = createStackNavigator();
-  //const Drawer = createDrawerNavigator();
+  
 
   return (
 
