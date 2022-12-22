@@ -13,3 +13,14 @@ model users {
   email    String
   password String
 }
+// NOT MIGRATED
+model cleanings {
+  id Int @id @default(autoincrement())
+  type String
+  comment String
+  timeDate String
+  status String
+
+  customer Int
+  dustAndGrimeSpecialist Int
+}

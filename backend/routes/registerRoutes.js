@@ -11,15 +11,17 @@ route.get("/", (async (req, res) => {
 }))
 
 route.post("/", (async (req, res) => {
-    const addUser = await prisma.users.create({
-        data: {
-            name: req.body.name,
-            email: req.body.email,
-            password: req.body.password,
-        }
-    })
+    const test = await req.body
+    console.log(test)
+    // const addUser = await prisma.users.create({
+    //     data: {
+    //         name: req.body.namn,
+    //         email: req.body.email,
+    //         password: req.body.password,
+    //     }
+    // })
 
-    res.json(addUser)
+    res.json(test)
 }))
 
 route.delete("/clear", (async (req, res) => {

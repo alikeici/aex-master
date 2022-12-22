@@ -47,6 +47,9 @@
   "bugs": {
     "url": "https://github.com/alikeici/aex-master/issues"
   },
+  "prisma":{
+    "schema": "backend/prisma/schema.prisma"
+  },
   "homepage": "https://github.com/alikeici/aex-master#readme",
   "description": ""
 }
