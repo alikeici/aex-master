@@ -1,8 +1,10 @@
 import express from "express";
+import bodyParser from "body-parser";
 import { PrismaClient } from "@prisma/client"
 const prisma = new PrismaClient();
 
 const route = express.Router();
+var jsonParser = bodyParser.json()
 
 // get all registered users from db
 route.get("/", (async (req, res) => {
@@ -10,34 +12,57 @@ route.get("/", (async (req, res) => {
     res.json(users)
 }))
 
-route.post("/", (async (req, res) => {
-    const test = await req.body
-    console.log(test)
-    // const addUser = await prisma.users.create({
-    //     data: {
-    //         name: req.body.namn,
-    //         email: req.body.email,
-    //         password: req.body.password,
-    //     }
-    // })
+route.get("/:id", (async (req, res) =>{
+    var user = await prisma.users.findUniqueOrThrow({
+        where :{
+            id: parseInt(req.params.id)
+        }
+    }
+    )
+    res.json(user)
+}))
 
-    res.json(test)
+route.post("/", jsonParser, (async (req, res) => {
+    console.log(req.body.email)
+    const addUser = await prisma.users.create({
+        data: {
+            fname: req.body.fname,
+            lname: req.body.lname,
+            email: req.body.email,
+            password: req.body.password,
+            role: req.body.role
+        }
+    })
+
+    res.json(addUser)
 }))
 
 route.delete("/clear", (async (req, res) => {
     await prisma.users.deleteMany()
 }))
 
-route.patch(":/id", (async (req, res) => {
-    await prisma.users.update({
+route.delete("/:id", (async (req, res) => {
+    const deleted = await prisma.users.delete({
+        where:{
+            id: parseInt(req.params.id)
+        }
+    })
+    res.json(deleted)
+}))
+
+route.patch("/:id", jsonParser, (async (req, res) => {
+    const updatedUser = await prisma.users.update({
         where: {
             id: parseInt(req.params.id)
         },
         data: {
-            name: req.body.name,
-            email: req.body.email
+            fname: req.body.fname,
+            lname: req.body.lname,
+            email: req.body.email,
+            password: req.body.password
         }
     })
+    res.json(updatedUser)
 }))
 
 export default route
