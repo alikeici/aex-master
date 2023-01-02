@@ -30,7 +30,7 @@ export default function Register ( ) {
                   secureTextEntry={true}
                   />
                 <Button title='Click Here To Register' onPress={this.UserRegistrationFunction} color='#2196F3' />
-              
+            
           
         </View>
                     
