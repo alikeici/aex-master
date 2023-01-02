@@ -22,6 +22,15 @@ route.get("/:id", (async (req, res) =>{
     res.json(assignment)
 }))
 
+route.get("/forcustomer/:id", (async (req, res) => {
+    var assignment = await prisma.cleanings.findMany({
+        where :{
+            customerId: parseInt(req.params.id)
+        }
+    })
+    res.json(assignment)
+}))
+
 route.post("/", jsonParser, (async (req, res) => {
     console.log(req.body.email)
     const addUser = await prisma.cleanings.create({

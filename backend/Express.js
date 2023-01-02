@@ -8,12 +8,13 @@ const prisma = new PrismaClient()
 
 const server = express();
 
+
+server.use(express.json())
 server.use("/register", registerRoute);
 server.use("/assignments", assignmentRoutes)
 
 const PORT = process.env.PORT || 5000;
 
-server.use(express.json())
 
 const corsConfig = {
     origin: "http://localhost:1337"
