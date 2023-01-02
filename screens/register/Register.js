@@ -24,22 +24,21 @@ console.log(fname)
       role: "customer"
     }
 
-    var test = await fetch('http://192.168.0.174/register/', {
+    var test = await fetch('http://10.0.2.2:1337/register', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        fname: 'yourValue',
-        lname: 'yourOtherValue',
-        email: "test",
-        password: "test",
+        fname: fname,
+        lname: lname,
+        email: email,
+        password: password,
         role: "customer",
       }),
     });
 
-    console.log(test)
   }
       
             return (
