@@ -17,6 +17,7 @@
     "@react-navigation/native": "^6.0.16",
     "@react-navigation/native-stack": "^6.9.4",
     "@react-navigation/stack": "^6.3.8",
+    "body-parser": "^1.20.1",
     "cors": "^2.8.5",
     "expo": "~47.0.8",
     "expo-status-bar": "~1.4.2",
@@ -46,6 +47,9 @@
   "type": "module",
   "bugs": {
     "url": "https://github.com/alikeici/aex-master/issues"
+  },
+  "prisma": {
+    "schema": "backend/prisma/schema.prisma"
   },
   "homepage": "https://github.com/alikeici/aex-master#readme",
   "description": ""
