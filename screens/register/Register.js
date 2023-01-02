@@ -1,38 +1,54 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { StyleSheet, View, TextInput, Button, Text, Alert } from 'react-native';
 
-const Register = () => {
 
-const UserRegistrationFunction = () => {
-  
-}
+export default function Register ( ) {
 
-return <View>
-          <Text style= {styles.title}>User Registration Form</Text>
+  const [fname, setFname] = useState();
+  const [lname, setLname] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+
+      
+            return (
+        <View style={styles.MainContainer}>
+                <Text style= {styles.title}>User Registration Form</Text>
           
-          <TextInput
-            placeholder='Enter User Name'
-           // onChangeText={(TextInputText) => this.setState({name : TextInputText})}
-            underlineColorAndroid='transparent'
-            style={styles.TextInputStyleClass}
-            />
-          <TextInput
-            placeholder='Enter User Email'
-          //  onChangeText={(TextInputText) => this.setState({email : TextInputText})}
-            underlineColorAndroid='transparent'
-            style={styles.TextInputStyleClass}
-            />
-          <TextInput
-            placeholder='Enter User Password'
-          //  onChangeText={(TextInputText) => this.setState({password : TextInputText})}
-            underlineColorAndroid='transparent'
-            style={styles.TextInputStyleClass}
-            secureTextEntry={true}
-            />
-          <Button title='Click Here To Register' onPress={UserRegistrationFunction} color='#2196F3' />
+                <TextInput
+                  placeholder='Enter User fName'
+                 onChangeText={() => setFname(e.target.value)}
+                  underlineColorAndroid='transparent'
+                  style={styles.TextInputStyleClass}
+                  />
+                  <TextInput
+                  placeholder='Enter User lName'
+                 onChangeText={() => setLname(e.target.value)}
+                  underlineColorAndroid='transparent'
+                  style={styles.TextInputStyleClass}
+                  />
+                <TextInput
+                  placeholder='Enter User Email'
+                onChangeText={() => setEmail(e.target.value)}
+                  underlineColorAndroid='transparent'
+                  style={styles.TextInputStyleClass}
+                  />
+                <TextInput
+                  placeholder='Enter User Password'
+                onChangeText={() => setPassword(e.target.value)}
+                  underlineColorAndroid='transparent'
+                  style={styles.TextInputStyleClass}
+                  secureTextEntry={true}
+                  />
+                <Button title='Click Here To Register' onPress={this.UserRegistrationFunction} color='#2196F3' />
+              
+          
+        </View>
+                    
+            );
 
-  </View>
-}
+    }
+
 
 const styles = StyleSheet.create({
 
@@ -58,4 +74,3 @@ const styles = StyleSheet.create({
 }
     );
 
-    export default Register;
