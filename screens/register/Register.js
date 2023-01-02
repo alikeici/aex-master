@@ -4,6 +4,11 @@ import { StyleSheet, View, TextInput, Button, Text, Alert } from 'react-native';
 
 export default function Register ( ) {
 
+  const [fname, setFname] = useState();
+  const [lname, setLname] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
 
       
             return (
@@ -11,20 +16,26 @@ export default function Register ( ) {
                 <Text style= {styles.title}>User Registration Form</Text>
           
                 <TextInput
-                  placeholder='Enter User Name'
-                 onChangeText={(TextInputText) => this.setState({name : TextInputText})}
+                  placeholder='Enter User fName'
+                 onChangeText={() => setFname(e.target.value)}
+                  underlineColorAndroid='transparent'
+                  style={styles.TextInputStyleClass}
+                  />
+                  <TextInput
+                  placeholder='Enter User lName'
+                 onChangeText={() => setLname(e.target.value)}
                   underlineColorAndroid='transparent'
                   style={styles.TextInputStyleClass}
                   />
                 <TextInput
                   placeholder='Enter User Email'
-                onChangeText={(TextInputText) => this.setState({email : TextInputText})}
+                onChangeText={() => setEmail(e.target.value)}
                   underlineColorAndroid='transparent'
                   style={styles.TextInputStyleClass}
                   />
                 <TextInput
                   placeholder='Enter User Password'
-                onChangeText={(TextInputText) => this.setState({password : TextInputText})}
+                onChangeText={() => setPassword(e.target.value)}
                   underlineColorAndroid='transparent'
                   style={styles.TextInputStyleClass}
                   secureTextEntry={true}
