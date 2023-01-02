@@ -17,8 +17,8 @@ export default function HomeScreen() {
       <TouchableOpacity style={styles.loginlink}>
         <Text onPress={() => nav.navigate('loginscreen')}>Logga in</Text>
         <Text onPress={() => nav.navigate('register')}>Registrering</Text>
-        <Text>Boka tid</Text>
-        <Text>Mina sidor</Text>
+        <Text onPress={() => nav.navigate('minasidor')}>Mina sidor</Text>
+        <Text onPress={() => nav.navigate('booking')}>Boka Tid</Text>
 
       </TouchableOpacity>
       <ImageBackground
