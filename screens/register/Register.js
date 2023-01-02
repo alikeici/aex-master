@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { StyleSheet, View, TextInput, Button, Text, Alert } from 'react-native';
 
 
@@ -9,7 +9,38 @@ export default function Register ( ) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
+  useEffect(() => {
+console.log(fname)
+  }, [fname])
 
+
+  const handleSendRegister = async () => {
+
+    var regObj = {
+      fname: fname,
+      lname: lname,
+      email: email,
+      password: password,
+      role: "customer"
+    }
+
+    var test = await fetch('http://192.168.0.174/register/', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        fname: 'yourValue',
+        lname: 'yourOtherValue',
+        email: "test",
+        password: "test",
+        role: "customer",
+      }),
+    });
+
+    console.log(test)
+  }
       
             return (
         <View style={styles.MainContainer}>
@@ -17,30 +48,30 @@ export default function Register ( ) {
           
                 <TextInput
                   placeholder='Enter User fName'
-                 onChangeText={() => setFname(e.target.value)}
+                 onChangeText={(e) => setFname(e)}
                   underlineColorAndroid='transparent'
                   style={styles.TextInputStyleClass}
                   />
                   <TextInput
                   placeholder='Enter User lName'
-                 onChangeText={() => setLname(e.target.value)}
+                 onChangeText={(e) => setLname(e)}
                   underlineColorAndroid='transparent'
                   style={styles.TextInputStyleClass}
                   />
                 <TextInput
                   placeholder='Enter User Email'
-                onChangeText={() => setEmail(e.target.value)}
+                onChangeText={(e) => setEmail(e)}
                   underlineColorAndroid='transparent'
                   style={styles.TextInputStyleClass}
                   />
                 <TextInput
                   placeholder='Enter User Password'
-                onChangeText={() => setPassword(e.target.value)}
+                onChangeText={(e) => setPassword(e)}
                   underlineColorAndroid='transparent'
                   style={styles.TextInputStyleClass}
                   secureTextEntry={true}
                   />
-                <Button title='Click Here To Register' onPress={this.UserRegistrationFunction} color='#2196F3' />
+                <Button title='Click Here To Register' onPress={() => handleSendRegister()} color='#2196F3' />
               
           
         </View>
