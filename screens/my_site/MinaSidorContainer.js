@@ -4,9 +4,16 @@ import { StyleSheet, View, Text } from "react-native";
 const MinaSidorContainer = ({name="", email=""}) => {
 
     return (
-            <View styles={styles.container}>
-                <Text styles={styles.containerText}>Namn: {name}</Text>
-                <Text styles={styles.containerText}>Email: {email}</Text>
+        
+         
+        
+            <View>
+            
+            <View style={styles.container}>
+
+                <Text style={styles.containerText}>Namn: {name}</Text>
+                <Text style={styles.containerText}>Email: {email}</Text>
+            </View>
             </View>
     )
 
@@ -16,10 +23,14 @@ export default MinaSidorContainer
 
 const styles = StyleSheet.create({
     container: {
-        borderWidth : 1,
-        borderColor: 'black'
+        borderWidth : 2,
+        borderColor: 'black',
+        margin: 5,
+        padding: 5,
+        borderRadius: 5,
     },
     containerText:{
+        fontSize: 20
+    },
 
-    }
 })

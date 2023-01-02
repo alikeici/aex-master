@@ -18,7 +18,7 @@ export default function HomeScreen() {
         <Text onPress={() => nav.navigate('loginscreen')}>Logga in</Text>
         <Text onPress={() => nav.navigate('register')}>Registrering</Text>
         <Text onPress={() => nav.navigate('minasidor')}>Mina sidor</Text>
-        <Text>Boka Tid</Text>
+        <Text onPress={() => nav.navigate('booking')}>Boka Tid</Text>
 
       </TouchableOpacity>
       <ImageBackground

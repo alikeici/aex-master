@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import MinaSidorContainer from "./MinaSidorContainer";
 
 const data = [{
@@ -24,6 +24,7 @@ const MinaSidor = () => {
 
     return (
         <View>
+            <Text style={styles.minasidorheader}>Mina Sidor</Text>
             {data.map(item=>(
                 <MinaSidorContainer name={item.name} email={item.email}/>
             ))}
@@ -32,3 +33,19 @@ const MinaSidor = () => {
 }
 
 export default MinaSidor;
+const styles = StyleSheet.create({
+    container: {
+        borderWidth : 2,
+        borderColor: 'black',
+        margin: 5,
+        padding: 5,
+    },
+    containerText:{
+
+    },
+    minasidorheader: {
+        flex: 1,
+        fontSize: 30,
+        alignItems: 'center'
+    }
+})

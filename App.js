@@ -7,7 +7,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './screens/home/HomeScreen';
 import LoginScreen from './screens/login/LoginScreen';
 import Register from './screens/register/Register';
-import MinaSidor from './screens/my_site/MInaSidor';
+import MinaSidor from './screens/my_site/MinaSidor';
+import Booking from './screens/booking/Booking';
 
 export default function App() {
 
@@ -25,6 +26,7 @@ export default function App() {
         <Stack.Screen name='loginscreen' component={LoginScreen}></Stack.Screen>
         <Stack.Screen name='register' component={Register}></Stack.Screen>
         <Stack.Screen name='minasidor' component={MinaSidor}></Stack.Screen>
+        <Stack.Screen name='booking' component={Booking}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
 
